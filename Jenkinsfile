@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat "dotnet build com.github.ame89.app1.csproj"
+                sh "dotnet build com.github.ame89.app1.csproj"
             }
         }
         stage('Test') {
