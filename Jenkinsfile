@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh "dotnet build com.github.ame89.app1.csproj"
+                dotnetBuild ${workspace}/src/com.github.ame89.app1.csproj
             }
         }
         stage('Test') {
