@@ -5,8 +5,10 @@ pipeline {
         stage('Pre') {
             steps {
                 echo 'Pre..'
-                sh {
-                    "ls -al"
+                script {
+                    sh {
+                        "ls -al"
+                    }
                 }
             }
         }
