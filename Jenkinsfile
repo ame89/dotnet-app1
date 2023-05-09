@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Pre..'
                 sh {
-                    'ls -al'
+                    "ls -al"
                 }
             }
         }
