@@ -22,7 +22,7 @@ pipeline {
         }
         stage('dotnet') {
             steps {
-                sh '/var/jenkins_home/tools/io.jenkins.plugins.dotnet.DotNetSDK/net7/dotnet src/com.github.ame89.app1.csproj'
+                sh '/var/jenkins_home/tools/io.jenkins.plugins.dotnet.DotNetSDK/net7/dotnet build src/com.github.ame89.app1.csproj'
             }
         }
     }
