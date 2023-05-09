@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+        stage('Pre') {
+            steps {
+                echo 'Pre..'
+                sh {
+                    'ls -al'
+                }
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
