@@ -4,34 +4,18 @@ pipeline {
     stages {
         stage('shell') {
             steps {
-                sh "echo $SHELL"
-                sh "ls -al"
-            }
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
+            }        
         }
         stage('groovy') {
             steps {
                 script {
                     println 'inside script'
                 }
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                script {
-                    //dotnetBuild "${workspace}/src/com.github.ame89.app1.csproj"
-                    println 'groovy'                   
-                }
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
             }
         }
     }
