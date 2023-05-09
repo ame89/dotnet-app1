@@ -2,11 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Pre') {
+        stage('shell') {
             steps {
-                echo 'Pre..'
                 sh {
-                    "ls -al"
+                    "echo $SHELL"
+                }
+            }
+        }
+        stage('groovy') {
+            steps {
+                script {
+                    println 'inside script'
                 }
             }
         }
@@ -14,7 +20,8 @@ pipeline {
             steps {
                 echo 'Building..'
                 script {
-                    dotnetBuild "${workspace}/src/com.github.ame89.app1.csproj"                   
+                    //dotnetBuild "${workspace}/src/com.github.ame89.app1.csproj"
+                    println 'groovy'                   
                 }
             }
         }
