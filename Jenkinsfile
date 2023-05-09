@@ -10,6 +10,7 @@ pipeline {
                     ls -al
                 '''
                 sh 'echo ${workspace}'
+                sh 'ls -al /var/jenkins_home/tools'
             }        
         }
         stage('groovy') {
