@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('shell') {
             steps {
-                sh {
-                    "echo $SHELL"
-                }
+                sh "echo $SHELL"
+                sh "ls -al"
             }
         }
         stage('groovy') {
